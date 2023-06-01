@@ -1,0 +1,27 @@
+{
+  "-NWoUGG-j3kMfEdp71St": {
+    "firebaseKey": "-NWoUGG-j3kMfEdp71St",
+    "timestamp": "05.31.2023",
+    "uid": "",
+    "vocabDefinition": "A binary variable, having two possible values called true and false",
+    "vocabLanguage": "Javascript",
+    "vocabWord": "Boolean"
+},
+"-NWoVRVnr6O6AdPsRtfN": {
+    "firebaseKey": "-NWoVRVnr6O6AdPsRtfN",
+    "timestamp": "05.31.2023",
+    "uid": "",
+    "vocabDefinition": "The flex layout allows responsive elements within a container to be automatically arranged depending on viewport size.",
+    "vocabLanguage": "CSS",
+    "vocabWord": "Flexbox"
+},
+"-NWoVgUJZVbjnNhbIzNN": {
+    "firebaseKey": "-NWoVgUJZVbjnNhbIzNN",
+    "timestamp": "05/31/2023",
+    "uid": "",
+    "vocabDefinition": "The <div> tag defines a division or a section in an HTML document.",
+    "vocabLanguage": "Javascript",
+    "vocabWord": "<div>"
+}
+}
+  
