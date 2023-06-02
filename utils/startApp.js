@@ -1,4 +1,7 @@
-// import modules here //
+import domBuilder from '../components/shared/domBuilder';
+import navBar from '../components/shared/navBar';
+import logoutButton from '../components/buttons/logoutButton';
+import { getCards } from '../api/cardsData';
 
 const startApp = (user) => {
   domBuilder(user);
