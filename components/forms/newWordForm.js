@@ -1,11 +1,10 @@
 import clearDom from '../../utils/clearDom';
 import renderToDom from '../../utils/renderToDom';
-import selectLang from './selectLanguage';
 
-const addWordForm = (obj = {}, user) => {
+const addWordForm = (obj = {}) => {
   clearDom();
   const domString = `
-  <form id="${obj.firebaseKey ? `update-word--${obj.firebaseKey}` : 'submit-word'}" class="mb-4">
+  <form id="${obj.firebaseKey ? `updateWord--${obj.firebaseKey}` : 'submitWord'}" class="mb-4">
   
   <div class="form-group">
     <label for="word">New Vocab Word</label>
@@ -22,7 +21,7 @@ const addWordForm = (obj = {}, user) => {
   <select id="langCategory" name="vocabLang" value="${obj.vocabLanguage || ''}" required>
     <option value="HTML" ${obj.vocabLanguage === 'HTML' ? 'selected' : ''}>HTML</option>
     <option value="CSS" ${obj.vocabLanguage === 'CSS' ? 'selected' : ''}>CSS</option>
-    <option value="JavaScript" ${obj.vocabLanguage === 'JavaScript' ? 'selected' : ''}>JavaScript</option>
+    <option value="Javascript" ${obj.vocabLanguage === 'Javascript' ? 'selected' : ''}>Javascript</option>
   </select>
 </div>
   
@@ -31,7 +30,6 @@ const addWordForm = (obj = {}, user) => {
 
 </form>`;
   renderToDom('#formContainer', domString);
-  selectLang(`${obj.vocabLanguage || ''}`, user);
 };
 
 export default addWordForm;

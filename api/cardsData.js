@@ -44,7 +44,7 @@ const deleteCards = (firebaseKey) => new Promise((resolve, reject) => {
 
 // CREATE CARD //
 const createCard = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/cards/${payload.firebaseKey}.json`, {
+  fetch(`${endpoint}/cards.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

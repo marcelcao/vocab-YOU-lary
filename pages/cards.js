@@ -9,6 +9,9 @@ const emptyCards = () => {
 const showCards = (array) => {
   clearDom();
 
+  const btnString = '<button class="btn btn-success btn-lg mb-4" id="newCardBtn">Create a New Vocab Card</button>';
+  renderToDom('#createWordBtn', btnString);
+
   let cardString = '';
   array.forEach((item) => {
     cardString += `
