@@ -25,7 +25,7 @@ const addWordForm = (obj = {}) => {
   </select>
 </div>
   
-  <button type="submit" class="btn btn-primary">Submit Vocab Word
+  <button type="submit" class="form-btn">Submit Vocab Word
   </button>
 
 </form>`;

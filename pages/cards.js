@@ -9,7 +9,7 @@ const emptyCards = () => {
 const showCards = (array) => {
   clearDom();
 
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="newCardBtn">Create a New Vocab Card</button>';
+  const btnString = '<button class="new-card-btn" id="newCardBtn">Create a New Vocab Card</button>';
   renderToDom('#createWordBtn', btnString);
 
   let cardString = '';
@@ -18,11 +18,11 @@ const showCards = (array) => {
     <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${item.vocabWord}</h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary">${item.vocabLanguage}</h6>
+      <h6 class="lang">${item.vocabLanguage}</h6>
       <p class="card-text">${item.vocabDefinition}</p>
         <hr>
-        <i id="editCardBtn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
-        <i id="deleteCardBtn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
+        <button id="editCardBtn--${item.firebaseKey}" class="btn btn-info">edit</button>
+        <button id="deleteCardBtn--${item.firebaseKey}" class="btn btn-danger">delete</button>
     </div>
   </div>`;
   });
