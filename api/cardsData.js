@@ -132,6 +132,25 @@ const jsCards = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const sortAlpha = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/cards.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const alpha = Object.values(data).sort((a, b) => {
+        if (a.vocabWord.toLowerCase() < b.vocabWord.toLowerCase()) return -1;
+        if (a.vocabWord.toLowerCase() > b.vocabWord.toLowerCase()) return 1;
+        return 0;
+      });
+      resolve(alpha);
+    })
+    .catch(reject);
+});
+
 export {
   getCards,
   deleteCards,
@@ -140,5 +159,6 @@ export {
   updateCard,
   htmlCards,
   cssCards,
-  jsCards
+  jsCards,
+  sortAlpha
 };

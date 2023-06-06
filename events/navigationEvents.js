@@ -1,6 +1,6 @@
 import { signOut } from '../utils/auth';
 import {
-  getCards, htmlCards, cssCards, jsCards
+  getCards, htmlCards, cssCards, jsCards, sortAlpha
 } from '../api/cardsData';
 import { showCards } from '../pages/cards';
 
@@ -28,7 +28,10 @@ const navigationEvents = (user) => {
     jsCards(user.uid).then(showCards);
   });
 
-  // SEARCH VOCAB //
+  // SORT ALPHABETICAL //
+  document.querySelector('#alpha').addEventListener('click', () => {
+    sortAlpha(user.uid).then(showCards);
+  });
 };
 
 export default navigationEvents;
