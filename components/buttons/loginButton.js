@@ -7,7 +7,7 @@ const loginButton = () => {
   <div class="loginPage">
   <h5 class="h5-login">speak like a programmer with</h5>
   <div class="logo-div-main">
-  <img src=${logo} class="login-logo" alt="vocab-YOU-lary" crossorigin>
+  <img src=${logo} class="login-logo" alt="vocab-YOU-lary">
   </div>
   <button id="google-auth" class="login-button">Log In</button>`;
   document.querySelector('#app').innerHTML = domString;
