@@ -7,8 +7,8 @@ const sorter = () => {
 </button>
 <ul class="dropdown-menu">
   <li><a class="dropdown-item" href="#" id="alpha">Alphabetical</a></li>
-  <li><a class="dropdown-item" href="#">Another action</a></li>
-  <li><a class="dropdown-item" href="#">Something else here</a></li>
+  <li><a class="dropdown-item" href="#" id="old">Oldest-Newest</a></li>
+  <li><a class="dropdown-item" href="#" id="new">Newest-Oldest</a></li>
 </ul>
 </div>`;
   renderToDom('#sortContainer', sortString);

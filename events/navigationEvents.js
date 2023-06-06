@@ -1,6 +1,6 @@
 import { signOut } from '../utils/auth';
 import {
-  getCards, htmlCards, cssCards, jsCards, sortAlpha
+  getCards, htmlCards, cssCards, jsCards, sortAlpha, sortOldest, sortNewest
 } from '../api/cardsData';
 import { showCards } from '../pages/cards';
 
@@ -31,6 +31,16 @@ const navigationEvents = (user) => {
   // SORT ALPHABETICAL //
   document.querySelector('#alpha').addEventListener('click', () => {
     sortAlpha(user.uid).then(showCards);
+  });
+
+  // SORT OLD //
+  document.querySelector('#old').addEventListener('click', () => {
+    sortOldest(user.uid).then(showCards);
+  });
+
+  // SORT NEW //
+  document.querySelector('#new').addEventListener('click', () => {
+    sortNewest(user.uid).then(showCards);
   });
 };
 

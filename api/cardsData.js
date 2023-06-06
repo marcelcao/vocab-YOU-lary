@@ -151,6 +151,42 @@ const sortAlpha = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const sortOldest = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/cards.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const alpha = Object.values(data).sort((a, b) => {
+        if (a.timestamp < b.timestamp) return -1;
+        return 0;
+      });
+      resolve(alpha);
+    })
+    .catch(reject);
+});
+
+const sortNewest = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/cards.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const alpha = Object.values(data).sort((a, b) => {
+        if (a.timestamp > b.timestamp) return -1;
+        return 0;
+      });
+      resolve(alpha);
+    })
+    .catch(reject);
+});
+
 export {
   getCards,
   deleteCards,
@@ -160,5 +196,7 @@ export {
   htmlCards,
   cssCards,
   jsCards,
-  sortAlpha
+  sortAlpha,
+  sortOldest,
+  sortNewest
 };
