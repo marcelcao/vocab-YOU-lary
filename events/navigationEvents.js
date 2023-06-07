@@ -1,6 +1,6 @@
 import { signOut } from '../utils/auth';
 import {
-  getCards, htmlCards, cssCards, jsCards, sortAlpha, sortOldest, sortNewest
+  getCards, htmlCards, cssCards, jsCards, sortAlpha, sortOldest, sortNewest, searchCards
 } from '../api/cardsData';
 import { showCards } from '../pages/cards';
 
@@ -42,6 +42,14 @@ const navigationEvents = (user) => {
   document.querySelector('#new').addEventListener('click', () => {
     sortNewest(user.uid).then(showCards);
   });
+
+  // search //
+  const search = (event) => {
+    const eventLC = event.target.value.toLowerCase();
+    console.warn(eventLC);
+    searchCards(user.uid).includes(eventLC).then(showCards);
+  };
+  document.querySelector('#searchCards').addEventListener('keyup', search);
 };
 
 export default navigationEvents;
