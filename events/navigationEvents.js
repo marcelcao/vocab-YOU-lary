@@ -1,6 +1,6 @@
 import { signOut } from '../utils/auth';
 import {
-  getCards, htmlCards, cssCards, jsCards, sortAlpha, sortOldest, sortNewest, searchCards
+  getCards, htmlCards, cssCards, jsCards, sortAlpha, sortOldest, sortNewest
 } from '../api/cardsData';
 import { showCards } from '../pages/cards';
 
@@ -46,8 +46,10 @@ const navigationEvents = (user) => {
   // search //
   const search = (event) => {
     const eventLC = event.target.value.toLowerCase();
-    console.warn(eventLC);
-    searchCards(user.uid).includes(eventLC).then(showCards);
+    getCards(user.uid).then((data) => {
+      const searching = Object.values(data).filter((obj) => obj.vocabWord.toLowerCase().includes(eventLC));
+      return searching;
+    }).then(showCards);
   };
   document.querySelector('#searchCards').addEventListener('keyup', search);
 };

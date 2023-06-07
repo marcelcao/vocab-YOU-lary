@@ -187,21 +187,6 @@ const sortNewest = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const searchCards = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/cards.json?orderBy="uid"&equalTo="${uid}"`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const searching = Object.values(data).filter((obj) => obj.vocabWord.toLowerCase());
-      resolve(searching);
-    })
-    .catch(reject);
-});
-
 export {
   getCards,
   deleteCards,
@@ -214,5 +199,5 @@ export {
   sortAlpha,
   sortOldest,
   sortNewest,
-  searchCards
+  // searchCards
 };
