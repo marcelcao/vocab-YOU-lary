@@ -42,6 +42,16 @@ const navigationEvents = (user) => {
   document.querySelector('#new').addEventListener('click', () => {
     sortNewest(user.uid).then(showCards);
   });
+
+  // search //
+  const search = (event) => {
+    const eventLC = event.target.value.toLowerCase();
+    getCards(user.uid).then((data) => {
+      const searching = Object.values(data).filter((obj) => obj.vocabWord.toLowerCase().includes(eventLC));
+      return searching;
+    }).then(showCards);
+  };
+  document.querySelector('#searchCards').addEventListener('keyup', search);
 };
 
 export default navigationEvents;

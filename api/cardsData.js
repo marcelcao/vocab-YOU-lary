@@ -110,8 +110,8 @@ const cssCards = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const html = Object.values(data).filter((obj) => obj.vocabLanguage === 'CSS');
-      resolve(html);
+      const css = Object.values(data).filter((obj) => obj.vocabLanguage === 'CSS');
+      resolve(css);
     })
     .catch(reject);
 });
@@ -126,8 +126,8 @@ const jsCards = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const html = Object.values(data).filter((obj) => obj.vocabLanguage === 'Javascript');
-      resolve(html);
+      const js = Object.values(data).filter((obj) => obj.vocabLanguage === 'Javascript');
+      resolve(js);
     })
     .catch(reject);
 });
@@ -198,5 +198,6 @@ export {
   jsCards,
   sortAlpha,
   sortOldest,
-  sortNewest
+  sortNewest,
+  // searchCards
 };
