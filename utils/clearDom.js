@@ -5,7 +5,6 @@ const clearDom = () => {
   document.querySelector('#cardsContainer').innerHTML = '';
   document.querySelector('#createWordBtn').innerHTML = '';
   document.querySelector('#formContainer').innerHTML = '';
-  document.querySelector('#formContainer').innerHTML = '';
 };
 
 export default clearDom;

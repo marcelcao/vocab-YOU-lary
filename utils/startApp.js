@@ -6,13 +6,11 @@ import { getCards } from '../api/cardsData';
 import { showCards } from '../pages/cards';
 import formEvents from '../events/formEvents';
 import navigationEvents from '../events/navigationEvents';
-import sorter from '../components/shared/sort';
 
 const startApp = (user) => {
   domBuilder(user);
   domEvents(user);
   formEvents(user);
-  sorter();
   navBar();
   logoutButton();
   navigationEvents(user);
